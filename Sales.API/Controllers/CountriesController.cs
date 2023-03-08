@@ -16,10 +16,13 @@ namespace Sales.API.Controllers
             _context = context;
         }
 
+
         [HttpGet]
         public async Task<ActionResult> GetAsync()
         {
-            return Ok(await _context.Countries.ToListAsync());
+            return Ok(await _context.Countries
+                .Include(x => x.States)
+                .ToListAsync());
         }
 
         [HttpGet("{id:int}")]

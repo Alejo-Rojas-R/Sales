@@ -22,7 +22,11 @@ namespace Sales.API.Data
         {
             if (!_context.Countries.Any()) 
             {
-                _context.Countries.Add(new Country { Name = "Colombia" });
+                _context.Countries.Add(new Country 
+                { 
+                    Name = "Colombia" 
+
+                });
                 _context.Countries.Add(new Country { Name = "Perú" });
                 _context.Countries.Add(new Country { Name = "Mexico" });
                 _context.Countries.Add(new Country { Name = "Venezuela" });
